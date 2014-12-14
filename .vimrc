@@ -3,21 +3,26 @@ set nocompatible
 
 filetype off
 
+" -- will now use vundle
+" call pathogen#infect()
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-		Plugin 'gmarik/Vundle.vim'
-		Plugin 'tpope/vim-fugitive'
-		Plugin 'L9'
-		Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-		Plugin 'scrooloose/nerdtree'
-		Plugin 'slim-template/vim-slim.git'
-		Plugin 'kchmck/vim-coffee-script'
-		Plugin 'wincent/command-t'
-		Plugin 'tpope/vim-rails'
-		Plugin 'tpope/vim-surround'
-		Plugin 'skammer/vim-css-color'
-		Plugin 'nelstrom/vim-mac-classic-theme'
+    Plugin 'gmarik/Vundle.vim'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'L9'
+    Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'slim-template/vim-slim.git'
+    Plugin 'kchmck/vim-coffee-script'
+    Plugin 'wincent/command-t'
+    Plugin 'tpope/vim-rails'
+    Plugin 'tpope/vim-surround'
+    Plugin 'skammer/vim-css-color'
+    Plugin 'nelstrom/vim-mac-classic-theme'
     Plugin 'yaymukund/vim-rabl'
+    Plugin 'bling/vim-airline'
+    Plugin 'chrisbra/Colorizer'
+    Plugin 'gorodinskiy/vim-coloresque'
 call vundle#end()
 filetype plugin indent on
 
@@ -55,43 +60,7 @@ au BufRead,BufNewFile [vV]agrantfile set filetype=ruby
 au Bufread,BufNewFile *.md set filetype=markdown textwidth=79
 au Bufread,BufNewFile *.markdown set textwidth=79
 
-" }}}
-
-
-" Statusline {{{
-hi User1 ctermbg=white    ctermfg=black   guibg=#89A1A1 guifg=#002B36
-hi User2 ctermbg=red      ctermfg=white   guibg=#aa0000 guifg=#89a1a1
-
-function! GetCWD()
-  return expand(":pwd")
-endfunction
-
-function! IsHelp()
-  return &buftype=='help'?' (help) ':''
-endfunction
-
-function! GetName()
-  return expand("%:t")==''?'<none>':expand("%:t")
-endfunction
-
-set statusline=%1*[%{GetName()}]\ 
-set statusline+=%<pwd:%{getcwd()}\ 
-set statusline+=%2*%{&modified?'\[+]':''}%*
-set statusline+=%{IsHelp()}
-set statusline+=%{&readonly?'\ (ro)\ ':''}
-set statusline+=[
-set statusline+=%{strlen(&fenc)?&fenc:'none'}\|
-set statusline+=%{&ff}\|
-set statusline+=%{strlen(&ft)?&ft:'<none>'}
-set statusline+=]\ 
-set statusline+=%=
-set statusline+=c%c
-set statusline+=,l%l
-set statusline+=/%L\ 
-
 set laststatus=2
-
-" }}}
 
 colorscheme mac_classic
 
@@ -101,7 +70,6 @@ set tabstop=2 "for ruby
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 nnoremap <F9> :NERDTreeToggle /newfile
-
 
 " Commenting blocks of code.
 autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
