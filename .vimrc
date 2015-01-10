@@ -1,3 +1,5 @@
+set encoding=utf-8
+scriptencoding utf-8
 " will use vim over vi's command if they both have it
 set nocompatible
 
@@ -37,7 +39,15 @@ set incsearch
 set showmatch
 
 set list "use ':so %' to list tabs or returns 
-set listchars=tab:▸\ ,eol:¬,nbsp:⋅,trail:•
+set listchars=""          " reset listchars
+set listchars=tab:‣\  " display tabs with a sign
+set listchars=tab:·\  " display tabs with a sign
+set listchars+=trail:• " display trailing whitespaces with a dot
+set listchars+=extends:»  " right wrap
+set listchars+=precedes:« " left wrap
+set listchars+=nbsp:~ " non breaking space
+set list
+
 set noswapfile
 set cursorline
 set number
