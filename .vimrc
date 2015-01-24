@@ -72,7 +72,7 @@ au Bufread,BufNewFile *.markdown set textwidth=79
 
 set laststatus=2
 
-colorscheme mac_classic
+"colorscheme mac_classic
 
 set expandtab "convert tabs to spaces
 set tabstop=2 "for ruby
