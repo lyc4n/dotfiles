@@ -1,5 +1,3 @@
-set encoding=utf-8
-scriptencoding utf-8
 " will use vim over vi's command if they both have it
 set nocompatible
 
@@ -25,6 +23,11 @@ call vundle#begin()
     Plugin 'bling/vim-airline'
     Plugin 'chrisbra/Colorizer'
     Plugin 'gorodinskiy/vim-coloresque'
+    Plugin 'toyamarinyon/vim-swift'
+    Plugin 'godlygeek/tabular'
+    Plugin 'plasticboy/vim-markdown'
+    Plugin 'csscomb/vim-csscomb'
+    Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 filetype plugin indent on
 
@@ -39,15 +42,7 @@ set incsearch
 set showmatch
 
 set list "use ':so %' to list tabs or returns 
-set listchars=""          " reset listchars
-set listchars=tab:‣\  " display tabs with a sign
-set listchars=tab:·\  " display tabs with a sign
-set listchars+=trail:• " display trailing whitespaces with a dot
-set listchars+=extends:»  " right wrap
-set listchars+=precedes:« " left wrap
-set listchars+=nbsp:~ " non breaking space
-set list
-
+set listchars=tab:▸\ ,eol:¬,nbsp:⋅,trail:•
 set noswapfile
 set cursorline
 set number
@@ -72,7 +67,7 @@ au Bufread,BufNewFile *.markdown set textwidth=79
 
 set laststatus=2
 
-"colorscheme mac_classic
+colorscheme mac_classic
 
 set expandtab "convert tabs to spaces
 set tabstop=2 "for ruby
@@ -92,3 +87,14 @@ autocmd FileType slim             let b:comment_leader = '/ '
 
 noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+
+runtime macros/matchit.vim
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+
+set relativenumber
