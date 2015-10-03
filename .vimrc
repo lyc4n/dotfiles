@@ -28,6 +28,8 @@ call vundle#begin()
     Plugin 'plasticboy/vim-markdown'
     Plugin 'csscomb/vim-csscomb'
     Plugin 'christoomey/vim-tmux-navigator'
+    Plugin 'thoughtbot/vim-rspec'
+    Plugin 'tpope/vim-dispatch'
 call vundle#end()
 filetype plugin indent on
 
@@ -98,3 +100,24 @@ nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
 set relativenumber
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" Command-T
+nnoremap <silent> <Leader>T :CommandT<CR>
+nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+
+" vim-rspec mappings
+nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>s :call RunNearestSpec()<CR>
+nnoremap <Leader>l :call RunLastSpec()<CR>
