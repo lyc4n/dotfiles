@@ -14,7 +14,6 @@ call vundle#begin()
     Plugin 'scrooloose/nerdtree'
     Plugin 'slim-template/vim-slim.git'
     Plugin 'kchmck/vim-coffee-script'
-    Plugin 'wincent/command-t'
     Plugin 'tpope/vim-rails'
     Plugin 'tpope/vim-surround'
     Plugin 'skammer/vim-css-color'
@@ -30,7 +29,10 @@ call vundle#begin()
     Plugin 'christoomey/vim-tmux-navigator'
     Plugin 'thoughtbot/vim-rspec'
     Plugin 'tpope/vim-dispatch'
+    Plugin 'jgdavey/tslime.vim'
+    Plugin 'ctrlpvim/ctrlp.vim'
 call vundle#end()
+
 filetype plugin indent on
 
 let mapleader = ","
@@ -113,9 +115,10 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" Command-T
-nnoremap <silent> <Leader>T :CommandT<CR>
-nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+" Send command from vim to a running tmux session
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 
 " vim-rspec mappings
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>

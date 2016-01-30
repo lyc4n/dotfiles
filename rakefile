@@ -11,7 +11,6 @@ task "default" do
     puts "✓"
   end
 
-
   if should_push
     system "git add ./"
     system "git commit -m '#{message}'"
