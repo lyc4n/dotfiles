@@ -81,6 +81,8 @@
       Plugin 'tpope/vim-dispatch'
       Plugin 'jgdavey/tslime.vim'
       Plugin 'ctrlpvim/ctrlp.vim'
+      Plugin 'vim-scripts/Rename2'
+      Plugin 'tomtom/tcomment_vim'
   call vundle#end()
 
   filetype plugin indent on
