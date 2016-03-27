@@ -18,6 +18,9 @@
   " nnoremap <Leader>s :call RunNearestSpec()<CR>
   " nnoremap <Leader>l :call RunLastSpec()<CR>
 
+  map <leader>gr :topleft :split config/routes.rb<cr>
+  map <leader>gg :topleft 100 :split Gemfile<cr>
+
   nmap j gj
   nmap k gk
   imap jj <esc>
@@ -69,7 +72,7 @@
       Plugin 'skammer/vim-css-color'
       Plugin 'nelstrom/vim-mac-classic-theme'
       Plugin 'yaymukund/vim-rabl'
-      Plugin 'bling/vim-airline'
+      Plugin 'vim-airline/vim-airline'
       Plugin 'chrisbra/Colorizer'
       Plugin 'gorodinskiy/vim-coloresque'
       Plugin 'toyamarinyon/vim-swift'
@@ -82,7 +85,7 @@
       Plugin 'jgdavey/tslime.vim'
       Plugin 'ctrlpvim/ctrlp.vim'
       Plugin 'vim-scripts/Rename2'
-      Plugin 'tomtom/tcomment_vim'
+      Plugin 'tomtom/tcomment_vim' " use with gc key
   call vundle#end()
 
   filetype plugin indent on
@@ -97,6 +100,9 @@
   au Bufread,BufNewFile *.md set filetype=markdown textwidth=79 " Markdown gets auto textwidth
   au Bufread,BufNewFile *.markdown set textwidth=79             " Markdown gets auto textwidth
   au VimResized * :wincmd =                                     " automatically rebalance windows on vim resize
+
+  let g:airline_left_sep=''
+  let g:airline_right_sep=''
 
 "= Plugin Specific Settings ====================================================
   " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
