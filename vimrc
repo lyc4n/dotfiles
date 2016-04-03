@@ -23,7 +23,9 @@
 
   nmap j gj
   nmap k gk
+  nmap <Leader>f :FZF<cr>
   imap jj <esc>
+
 
   "command! E e " lets us use E somefile
 
@@ -56,6 +58,8 @@
     set number " hybrid relative and absolute for current line
   endif
 
+  set rtp+=~/.fzf
+
 "= Vundle Plugin Manager =======================================================
   filetype off " vundle requires to set filetype off
   set rtp+=~/.vim/bundle/Vundle.vim
@@ -83,9 +87,13 @@
       Plugin 'thoughtbot/vim-rspec'
       Plugin 'tpope/vim-dispatch'
       Plugin 'jgdavey/tslime.vim'
-      Plugin 'ctrlpvim/ctrlp.vim'
       Plugin 'vim-scripts/Rename2'
       Plugin 'tomtom/tcomment_vim' " use with gc key
+      Plugin 'junegunn/fzf'
+      Plugin 'MarcWeber/vim-addon-mw-utils'
+      Plugin 'tomtom/tlib_vim'
+      Plugin 'garbas/vim-snipmate'
+      Plugin 'honza/vim-snippets'
   call vundle#end()
 
   filetype plugin indent on
@@ -101,10 +109,8 @@
   au Bufread,BufNewFile *.markdown set textwidth=79             " Markdown gets auto textwidth
   au VimResized * :wincmd =                                     " automatically rebalance windows on vim resize
 
-  let g:airline_left_sep=''
-  let g:airline_right_sep=''
-
 "= Plugin Specific Settings ====================================================
+"
   " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
   if executable('ag')
     " Use Ag over Grep
@@ -122,3 +128,8 @@
   let g:tslime_always_current_window = 1
   let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 
+  let g:airline_left_sep=''
+  let g:airline_right_sep=''
+
+  " Use this when adding custom snippets
+  " let g:snippets_dir='~/code/dotfiles/vim/snippets, ~/path/to/original/snippet/dir'
