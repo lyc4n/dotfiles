@@ -31,6 +31,9 @@
 
 "= SET Commands ================================================================
   set nocompatible " will use vim over vi's command if they both have it
+  set enc=utf-8
+  set fileencoding=utf-8
+  set fileencodings=ucs-bom,utf8,prc
   set backspace=indent,eol,start
   set hlsearch
   set autoindent
