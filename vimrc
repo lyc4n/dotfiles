@@ -8,6 +8,7 @@
 
   nnoremap <leader>vi :tabe $MYVIMRC<cr>
   nnoremap <leader>so :so $MYVIMRC<cr>
+  nnoremap <leader>w :w<cr>
 
   " zoom a vim pane, <C-w>= to re-balance
   nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
