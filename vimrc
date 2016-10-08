@@ -6,8 +6,8 @@
 "= Custom Mappings =============================================================
   let mapleader = ","
 
+  nnoremap <leader>vi :tabe $MYVIMRC<cr>
   nnoremap <leader>so :so $MYVIMRC<cr>
-  nnoremap <leader>w :wa<cr>
 
   " zoom a vim pane, <C-w>= to re-balance
   nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
@@ -97,13 +97,15 @@
       Plugin 'tomtom/tlib_vim'
       Plugin 'garbas/vim-snipmate'
       Plugin 'honza/vim-snippets'
+      Plugin 'vim-scripts/greplace.vim'
+      Plugin 'tomasr/molokai'
   call vundle#end()
 
   filetype plugin indent on
 
 "= Commands ===================================================================
   syntax enable
-  colorscheme mac_classic
+  colorscheme molokai "mac_classic
   runtime macros/matchit.vim
 
 "= Auto Commands ===============================================================
