@@ -136,5 +136,5 @@
   let g:airline_left_sep=''
   let g:airline_right_sep=''
 
-  " Use this when adding custom snippets
+  " Use this when adding custom snippets 
   " let g:snippets_dir='~/code/dotfiles/vim/snippets, ~/path/to/original/snippet/dir'
