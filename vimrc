@@ -100,6 +100,8 @@
       Plugin 'honza/vim-snippets'
       Plugin 'vim-scripts/greplace.vim'
       Plugin 'tomasr/molokai'
+      Plugin 'pangloss/vim-javascript'
+      Plugin 'mxw/vim-jsx'
   call vundle#end()
 
   filetype plugin indent on
@@ -110,10 +112,12 @@
   runtime macros/matchit.vim
 
 "= Auto Commands ===============================================================
+  au BufRead,BufNewFile *.es6 set filetype=javascript.jsx
   au BufRead,BufNewFile *.ru set filetype=ruby                  " .ru files are Ruby
   au Bufread,BufNewFile *.md set filetype=markdown textwidth=79 " Markdown gets auto textwidth
   au Bufread,BufNewFile *.markdown set textwidth=79             " Markdown gets auto textwidth
   au VimResized * :wincmd =                                     " automatically rebalance windows on vim resize
+  au FileType javascript.jsx runtime! ftplugin/html/sparkup.vim
 
 "= Plugin Specific Settings ====================================================
 "
