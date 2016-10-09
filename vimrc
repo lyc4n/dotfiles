@@ -27,8 +27,7 @@
   nmap <Leader>f :FZF<cr>
   imap jj <esc>
 
-
-  "command! E e " lets us use E somefile
+  command! -nargs=1 Mkfulldir execute "!mkdir -p %h" string(<q-args>)
 
 "= SET Commands ================================================================
   set nocompatible " will use vim over vi's command if they both have it
