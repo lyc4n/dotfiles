@@ -43,7 +43,7 @@
   set expandtab "convert tabs to spaces
   set tabstop=2 "for ruby
   set list "use ':so %' to list tabs or returns 
-  set listchars=tab:▸\ ,eol:¬,nbsp:⋅,trail:•
+  set listchars=tab:▸\ ,nbsp:⋅,trail:•
   set noswapfile
   set cursorline
   set number
@@ -76,16 +76,12 @@
       Plugin 'kchmck/vim-coffee-script'
       Plugin 'tpope/vim-rails'
       Plugin 'tpope/vim-surround'
-      Plugin 'skammer/vim-css-color'
       Plugin 'nelstrom/vim-mac-classic-theme'
       Plugin 'yaymukund/vim-rabl'
       Plugin 'vim-airline/vim-airline'
-      Plugin 'chrisbra/Colorizer'
-      Plugin 'gorodinskiy/vim-coloresque'
       Plugin 'toyamarinyon/vim-swift'
       Plugin 'godlygeek/tabular'
       Plugin 'plasticboy/vim-markdown'
-      Plugin 'csscomb/vim-csscomb'
       Plugin 'christoomey/vim-tmux-navigator'
       Plugin 'thoughtbot/vim-rspec'
       Plugin 'tpope/vim-dispatch'
@@ -101,6 +97,7 @@
       Plugin 'tomasr/molokai'
       Plugin 'pangloss/vim-javascript'
       Plugin 'mxw/vim-jsx'
+      Plugin 'mileszs/ack.vim'
   call vundle#end()
 
   filetype plugin indent on
