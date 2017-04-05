@@ -8,4 +8,5 @@
 ## A.
 
 *Problem:*  `"error: There was a problem with the editor 'vi'"`
+
 *Solution:* `$ git config --global core.editor $(which vim)`
