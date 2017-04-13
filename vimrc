@@ -98,6 +98,7 @@
       Plugin 'pangloss/vim-javascript'
       Plugin 'mxw/vim-jsx'
       Plugin 'mileszs/ack.vim'
+      Plugin 'vim-scripts/Align'
   call vundle#end()
 
   filetype plugin indent on
