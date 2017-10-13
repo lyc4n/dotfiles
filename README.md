@@ -3,10 +3,8 @@
 1. $ cd ~
 2. $ ln -s code/dotfiles/vimrc .vimrc
 
-# Some problems and solutions upon setup:
+# Problems and solutions upon setup:
 
-## A.
+## 1.  There was a problem with the editor 'vi'
 
-*Problem:*  `"error: There was a problem with the editor 'vi'"`
-
-*Solution:* `$ git config --global core.editor $(which vim)`
+Try running `$ git config --global core.editor $(which vim)`
