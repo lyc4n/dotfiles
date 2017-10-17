@@ -28,6 +28,8 @@
   imap jj <esc>
 
   command! -complete=file -nargs=1 Mkfulldir execute "!mkdir -p %h" string(<q-args>)
+  command! ConvertToSingleQuotes %s/\"\([^"]*\)\"/'\1'/g
+  command! ConvertToDoubleQuotes %s/\'\([^']*\)\'/"\1"/g
 
 "= SET Commands ================================================================
   set nocompatible " will use vim over vi's command if they both have it
