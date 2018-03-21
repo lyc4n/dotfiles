@@ -14,6 +14,9 @@
   nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
   nnoremap <leader>= :wincmd =<cr>
 
+  " Search visually selected text via //
+  vnoremap // y/<C-R>"<CR>
+
   " vim-rspec mappings
   " nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
   " nnoremap <Leader>s :call RunNearestSpec()<CR>
