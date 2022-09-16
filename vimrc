@@ -68,43 +68,44 @@
 
   set rtp+=~/.fzf
 
-"= Vundle Plugin Manager =======================================================
+"= Vim-plug plugin anager =======================================================
   filetype off " vundle requires to set filetype off
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#begin()
-      Plugin 'gmarik/Vundle.vim'
-      Plugin 'tpope/vim-fugitive'
-      Plugin 'L9'
-      Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-      Plugin 'scrooloose/nerdtree'
-      Plugin 'slim-template/vim-slim.git'
-      Plugin 'kchmck/vim-coffee-script'
-      Plugin 'tpope/vim-rails'
-      Plugin 'tpope/vim-surround'
-      Plugin 'nelstrom/vim-mac-classic-theme'
-      Plugin 'yaymukund/vim-rabl'
-      Plugin 'vim-airline/vim-airline'
-      Plugin 'toyamarinyon/vim-swift'
-      Plugin 'godlygeek/tabular'
-      Plugin 'plasticboy/vim-markdown'
-      Plugin 'christoomey/vim-tmux-navigator'
-      Plugin 'thoughtbot/vim-rspec'
-      Plugin 'tpope/vim-dispatch'
-      Plugin 'jgdavey/tslime.vim'
-      Plugin 'vim-scripts/Rename2'
-      Plugin 'tomtom/tcomment_vim' " use with gc key
-      Plugin 'junegunn/fzf'
-      Plugin 'MarcWeber/vim-addon-mw-utils'
-      Plugin 'tomtom/tlib_vim'
-      Plugin 'garbas/vim-snipmate'
-      Plugin 'honza/vim-snippets'
-      Plugin 'vim-scripts/greplace.vim'
-      Plugin 'tomasr/molokai'
-      Plugin 'pangloss/vim-javascript'
-      Plugin 'mxw/vim-jsx'
-      Plugin 'mileszs/ack.vim'
-      Plugin 'vim-scripts/Align'
-  call vundle#end()
+  "set rtp+=~/.vim/bundle/Vundle.vim
+  call plug#begin()
+      "Plug 'gmarik/Vundle.vim'
+      Plug 'tpope/vim-fugitive'
+      Plug 'vim-scripts/L9'
+      Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+      Plug 'scrooloose/nerdtree'
+      Plug 'slim-template/vim-slim'
+      Plug 'kchmck/vim-coffee-script'
+      Plug 'tpope/vim-rails'
+      Plug 'tpope/vim-surround'
+      Plug 'nelstrom/vim-mac-classic-theme'
+      Plug 'yaymukund/vim-rabl'
+      Plug 'vim-airline/vim-airline'
+      Plug 'toyamarinyon/vim-swift'
+      Plug 'godlygeek/tabular'
+      Plug 'plasticboy/vim-markdown'
+      Plug 'christoomey/vim-tmux-navigator'
+      Plug 'thoughtbot/vim-rspec'
+      Plug 'tpope/vim-dispatch'
+      Plug 'jgdavey/tslime.vim'
+      Plug 'vim-scripts/Rename2'
+      Plug 'tomtom/tcomment_vim' " use with gc key
+      Plug 'junegunn/fzf'
+      Plug 'MarcWeber/vim-addon-mw-utils'
+      Plug 'tomtom/tlib_vim'
+      Plug 'garbas/vim-snipmate'
+      Plug 'honza/vim-snippets'
+      Plug 'vim-scripts/greplace.vim'
+      Plug 'tomasr/molokai'
+      Plug 'pangloss/vim-javascript'
+      Plug 'mxw/vim-jsx'
+      Plug 'mileszs/ack.vim'
+      Plug 'vim-scripts/Align'
+      Plug 'dense-analysis/ale'
+  call plug#end()
 
   filetype plugin indent on
 
@@ -142,6 +143,18 @@
 
   let g:airline_left_sep=''
   let g:airline_right_sep=''
+
+  " Set specific linters
+  let g:ale_linters = {
+  \   'javascript': ['eslint'],
+  \   'ruby': ['rubocop'],
+  \}
+
+  " Only run linters named in ale_linters settings.
+  let g:ale_linters_explicit = 1
+  let g:ale_sign_column_always = 1
+  let g:airline#extensions#ale#enabled = 1
+
 
   " Use this when adding custom snippets 
   " let g:snippets_dir='~/code/dotfiles/vim/snippets, ~/path/to/original/snippet/dir'
